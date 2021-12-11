@@ -11,25 +11,19 @@ data class Board(
             }
 }
 
-data class Square(val color: Color, var piece: Piece?) {
-    override fun toString(): String {
-        return piece?.stringRep ?: "O"
-    }
-}
-
 typealias Rank = List<Square>
 
 fun Board.setupForNewGame() {
     ranks.addAll(
         listOf(
-            baseRankPiecesFor(Color.WHITE, Color.BLACK),
+            baseRankPiecesFor(Color.BLACK, Color.WHITE),
             pawnsForColor(Color.WHITE, Color.WHITE),
             emptyRank(Color.BLACK),
             emptyRank(Color.WHITE),
             emptyRank(Color.BLACK),
             emptyRank(Color.WHITE),
             pawnsForColor(Color.BLACK, Color.BLACK),
-            baseRankPiecesFor(Color.BLACK, Color.WHITE)
+            baseRankPiecesFor(Color.WHITE, Color.BLACK)
         )
     )
 }

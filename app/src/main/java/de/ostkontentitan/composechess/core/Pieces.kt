@@ -1,7 +1,7 @@
 package de.ostkontentitan.composechess.core
 
-sealed class Piece {
-    abstract val color: Color
+sealed class Piece : Colored {
+    abstract override val color: Color
 
     val stringRep: String
         get() = when (this) {
