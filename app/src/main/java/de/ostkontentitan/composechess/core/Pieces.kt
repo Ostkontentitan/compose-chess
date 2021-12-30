@@ -2,16 +2,6 @@ package de.ostkontentitan.composechess.core
 
 sealed class Piece : Colored {
     abstract override val color: Color
-
-    val stringRep: String
-        get() = when (this) {
-            is Pawn -> "p"
-            is Bishop -> "B"
-            is King -> "K"
-            is Knight -> "N"
-            is Queen -> "Q"
-            is Rook -> "R"
-        }
 }
 
 data class Pawn(override val color: Color) : Piece()
